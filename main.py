@@ -1,7 +1,7 @@
 import os
 from pathlib import Path
 
-PITCH = "Tell make.fun's AI agent about the app you keep wishing existed, in plain words, and it will build a first version you can click through and tweak with you—no code to learn, just a few words to try."
+PITCH = "The fastest way to learn if your app idea works is to stop describing it and start using it: an AI agent on make.fun builds the first version from your words, and you decide what's next."
 
 
 def main():
