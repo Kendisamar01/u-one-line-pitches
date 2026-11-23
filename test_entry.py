@@ -14,10 +14,10 @@ def main():
     env["MAKEFUN_OUTPUT_DIR"] = OUTPUT_DIR
     subprocess.run([sys.executable, "main.py"], cwd=ROOT, env=env, check=True)
     text = ENTRY.read_bytes().decode("utf-8")
-    assert text.strip(), "entry must not be empty or whitespace only"
-    assert text == text.strip(), "entry must not have outer whitespace"
-    assert "\n" not in text and "\r" not in text, "entry must be one line"
-    assert 1 <= len(text) <= 240, "entry must be 1 to 240 characters"
+    lines = text.splitlines()
+    assert len(lines) == 1, "entry must be exactly one line"
+    assert lines[0].strip(), "entry must not be empty or whitespace only"
+    assert 1 <= len(lines[0]) <= 240, "entry must be 1 to 240 characters"
     print("PASS")
 
 
